@@ -54,15 +54,7 @@ class ConsoleInterface
   # на выходе будет: "К О __ О __ __"
   def word_to_show
     result =
-      @game.letters_to_guess.map do |letter|
-        if letter == nil
-          "__"
-        else
-          letter
-        end
-      end
-
-    result.join(" ")
+      @game.letters_to_guess.map { |letter| letter || "__" }.join(" ")
   end
 
   # Получает массив ошибочных букв и склеивает их в строку вида "Х, У"
@@ -75,6 +67,5 @@ class ConsoleInterface
   def get_input
     print "Введите следующую букву: "
     letter = gets[0].upcase
-    letter
   end
 end
