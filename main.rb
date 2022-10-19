@@ -7,8 +7,8 @@ if Gem.win_platform?
   end
 end
 
-require_relative 'lib/console_interface'
-require_relative 'lib/game'
+require_relative "lib/console_interface"
+require_relative "lib/game"
 
 # 1. Поздороваться
 puts "Всем привет!"
