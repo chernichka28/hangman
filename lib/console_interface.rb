@@ -19,18 +19,16 @@ class ConsoleInterface
   # Выводит в консоль текущее состояние игры, используя данные из экземпляра
   # класса Game (количество ошибок, сколько осталось попыток и т.д.)
   def print_out
-    puts <<~FRAME
-      Слово: #{word_to_show}
-      #{figure}
-      Ошибки (#{@game.errors_made}): #{errors_to_show}
-      У вас осталось ошибок: #{@game.errors_allowed}
-
-    FRAME
+    out_string = "Слово: #{word_to_show}\n".colorize(:light_blue)
+    out_string +=  "#{figure}\n".colorize(:light_green)
+    out_string += "Ошибки (#{@game.errors_made}): #{errors_to_show}\n".colorize(:red)
+    out_string += "У вас осталось ошибок: #{@game.errors_allowed}\n".colorize(:yellow)
+    puts out_string
 
     if @game.won?
-      puts "Поздравляем, вы выиграли!"
+      puts "Поздравляем, вы выиграли!".colorize(:green)
     elsif @game.lost?
-      puts "Вы проиграли, загаданное слово: #{@game.word}"
+      puts "Вы проиграли, загаданное слово: #{@game.word}".colorize(:red)
     end
   end
 
