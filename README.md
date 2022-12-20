@@ -5,6 +5,12 @@ Hangman game program.
 
 To add new words: open the `data/words.txt`
 
+Installing:
+
+```
+bundle install
+```
+
 Console launch command:
 
 ```
