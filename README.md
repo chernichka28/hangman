@@ -14,5 +14,5 @@ bundle install
 Console launch command:
 
 ```
-ruby main.rb
+bundle exec ruby main.rb
 ```
